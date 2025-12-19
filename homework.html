@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI}
+body{
+height:100vh;background:linear-gradient(135deg,#667eea,#764ba2);
+color:#fff;display:flex;justify-content:center;align-items:center;
+flex-direction:column
+}
+nav{
+width:100%;display:flex;justify-content:flex-end;
+padding:15px 40px;background:rgba(0,0,0,.3);position:absolute;top:0;right:0;
+}
+nav ul{list-style:none;display:flex}
+nav li{margin-left:20px;cursor:pointer;font-weight:bold}
+nav li:hover{text-decoration:underline}
+.card{
+background:rgba(255,255,255,.15);backdrop-filter:blur(10px);
+padding:50px 70px;border-radius:20px;text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+animation:float 3s ease-in-out infinite;min-width:300px;
+}
+input,textarea,button{width:100%;margin-top:10px;padding:10px;border:0;border-radius:6px}
+button{font-weight:bold;background:#fff;color:#764ba2;cursor:pointer}
+@keyframes float{50%{transform:translateY(-15px)}}
+</style>
+
+<script>
+function show(content){
+const card = document.querySelector('.card');
+switch(content){
+case 'home': card.innerHTML='<h1>Welcome to My Website</h1><p>From me T4YL1N✨</p>'; break;
+case 'contact': card.innerHTML='<h2>Contact Us</h2><input placeholder=\"Name\"><input placeholder=\"Email\"><textarea placeholder=\"Message\"></textarea><button>Send</button>'; break;
+case 'login': card.innerHTML='<h2>Login</h2><input placeholder=\"Email\"><input type=\"password\" placeholder=\"Password\"><button>Login</button>'; break;
+case 'signup': card.innerHTML='<h2>Sign Up</h2><input placeholder=\"Name\"><input placeholder=\"Email\"><input type=\"password\" placeholder=\"Password\"><button>Create Account</button>'; break;
+}
+}
+</script>
+</head>
+<body>
+
+<nav>
+<ul>
+<li onclick="show('home')">Home</li>
+<li onclick="show('contact')">Contact</li>
+<li onclick="show('login')">Login</li>
+<li onclick="show('signup')">Sign Up</li>
+</ul>
+</nav>
+
+<div class="card">
+<h1>Welcome to My Website</h1>
+<p>From me T4YL1N✨</p>
+</div>
+
+</body>
+</html>
